@@ -1,0 +1,16 @@
+<div *ngIf="weather" class="col">
+	<a [routerLink]="['/weather', woeid]">
+	<div class="card" style="width: 18rem;">
+		<div class="card-body">
+			<img class="card-img-top" src="{{ weather.icon_url }}" alt="Card image cap">
+			<h4 class="card-title">{{ weather.title }}</h4>
+			<h5>{{ weather.temperature }}°C</h5>
+			<hr>
+			<ul>
+				<li><strong>MAX: </strong> {{ weather.max_temp }}°C</li>
+				<li><strong>MIN: </strong> {{ weather.min_temp }}°C</li>
+			</ul>
+		</div>
+	</div>
+	</a>
+</div>
