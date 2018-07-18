@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import {HomeComponent} from './home.component';
@@ -15,6 +16,7 @@ import {ApiService} from './api.service';
 const appRoutes: Routes = [
 	{path:'', component: HomeComponent},
 	{path:'weather/:woeid', component: WeatherDetailsComponent},
+  {path:'search/:keyword', component: SearchResultComponent},
 	{ path: '**', component: PageNotFoundComponent }
 ];
 
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, {enableTracing: false}),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

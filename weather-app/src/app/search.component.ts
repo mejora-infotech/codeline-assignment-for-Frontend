@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'search',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
 })
 
 export class SearchComponent {
-	
+
+	@Input('keyword') keyword:string;
+
+	constructor(private router: Router) {
+
+	}
+
+	private makeSearch(keyword) {
+		if(keyword.trim()!=='') {
+			this.router.navigate(['/search', keyword]);
+		}		
+	}
 }

@@ -2,9 +2,9 @@
 	<div class="container">
 		<div class="banner-search">
 			<div class="input-group">
-  				<input type="text" class="form-control" placeholder="Enter city name..." aria-label="Enter city name" aria-describedby="button-addon4">
+  				<input type="text" class="form-control" placeholder="Enter city name..." aria-label="Enter city name" aria-describedby="button-addon4" [ngModel]="keyword" #search_input>
 		  		<div class="input-group-append" id="button-addon4">
-		    		<button class="btn btn-secondary" type="submit">Search</button>
+		    		<button class="btn btn-secondary" type="button" (click)="makeSearch(search_input.value)">Search</button>
 		  		</div>
 			</div>
 		</div>

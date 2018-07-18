@@ -11,4 +11,8 @@ export class ApiService {
 	getWeather(woeid) {
 		return this.http.get(config.localApiUrl+'?command=location&woeid='+woeid);
 	}
+
+	getSearchResult(keyword) {
+		return this.http.get(config.localApiUrl+'?command=search&keyword='+keyword);	
+	}
 }
