@@ -8,6 +8,8 @@ import {HomeComponent} from './home.component';
 import {PageNotFoundComponent} from './page_not_found.component';
 import {WeatherComponent} from './weather.component';
 import {WeatherDetailsComponent} from './weather_details.component';
+import {SearchComponent} from './search.component';
+import {SearchResultComponent} from './search_result.component';
 import {ApiService} from './api.service';
 
 const appRoutes: Routes = [
@@ -22,7 +24,9 @@ const appRoutes: Routes = [
     HomeComponent,
     PageNotFoundComponent,
     WeatherComponent,
-    WeatherDetailsComponent
+    WeatherDetailsComponent,
+    SearchComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,

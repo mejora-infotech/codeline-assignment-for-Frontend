@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import {ApiService} from './api.service';
 import {config} from './config';
+import {weather_data} from './weather_data';
 
 @Component({
   selector: 'weather',
@@ -19,7 +20,7 @@ export class WeatherComponent {
 
 	//get weather data using woeid
 	ngOnInit() {
-		this.observ=this.api_service.getWeather(this.woeid).subscribe((data)=>{
+		this.observ=this.api_service.getWeather(this.woeid).subscribe((data: weather_data)=>{
 			if(typeof data.consolidated_weather !=='undefined' && Array.isArray(data.consolidated_weather) && data.consolidated_weather.length!=0) {
 
 				this.weather=data;
