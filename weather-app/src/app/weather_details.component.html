@@ -1,17 +1,25 @@
-<div *ngFor="let day_weather of weathers" class="col">
-	<h2 *ngIf="!day_weather.day_name">{{ day_weather.day_date | date:"EEE dd MMM" }}</h2>
-	<h2 *ngIf="day_weather.day_name">{{ day_weather.day_name }}</h2>
-	<div class="card" style="width: 18rem;">
-		<div class="card-body">
-			<img class="card-img-top" src="{{ day_weather.icon_url }}" alt="Card image cap">
-			<h4 class="card-title">{{ day_weather.title }}</h4>
-			<h5>{{ day_weather.temperature }}°C</h5>
-			<hr>
-			<ul>
-				<li><strong>MAX: </strong> {{ day_weather.max_temp }}°C</li>
-				<li><strong>MIN: </strong> {{ day_weather.min_temp }}°C</li>
-			</ul>
+<div class="container">
+	<h1>London</h1>
+	<hr>
+	<div class="row">
+	<div *ngFor="let day_weather of weathers" class="col-md-4">
+		<div class="card">
+			<div class="card-header">
+				<h5 *ngIf="!day_weather.day_name">{{ day_weather.day_date | date:"EEE dd MMM" }}</h5>
+				<h5 *ngIf="day_weather.day_name">{{ day_weather.day_name }}</h5>
+			</div>
+			<div class="card-body">
+				<img class="card-img-top" src="{{ day_weather.icon_url }}" alt="Card image cap">
+				<h4 class="card-title">{{ day_weather.title }}</h4>
+				<h5>{{ day_weather.temperature }}°C</h5>
+				<hr>
+				<ul>
+					<li><strong>MAX: </strong> {{ day_weather.max_temp }}°C</li>
+					<li><strong>MIN: </strong> {{ day_weather.min_temp }}°C</li>
+				</ul>
+			</div>
 		</div>
+		
 	</div>
-	
+</div>
 </div>
