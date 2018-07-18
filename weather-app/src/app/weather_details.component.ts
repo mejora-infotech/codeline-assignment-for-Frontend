@@ -55,11 +55,11 @@ export class WeatherDetailsComponent {
 	       			this.location=data.title;
 
 	       			//set image url of weather icon
-	       			this.weathers[i].icon_url=config.iconUrl.replace("X", data.consolidated_weather[0].weather_state_abbr);
+	       			this.weathers[i].icon_url=config.iconUrl.replace("X", data.consolidated_weather[i].weather_state_abbr);
 
-	       			this.weathers[i].temperature=Math.floor(data.consolidated_weather[0].the_temp);
-	       			this.weathers[i].min_temp=Math.floor(data.consolidated_weather[0].min_temp);
-	       			this.weathers[i].max_temp=Math.floor(data.consolidated_weather[0].max_temp);
+	       			this.weathers[i].temperature=Math.floor(data.consolidated_weather[i].the_temp);
+	       			this.weathers[i].min_temp=Math.floor(data.consolidated_weather[i].min_temp);
+	       			this.weathers[i].max_temp=Math.floor(data.consolidated_weather[i].max_temp);
 	       		}  		
 
 	       	}
