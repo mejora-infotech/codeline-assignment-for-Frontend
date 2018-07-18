@@ -11,7 +11,7 @@ img {
   }
   
   .banner-sec {
-    background: url(http://lorempixel.com/1920/1080/nature/3/) center no-repeat;
+    background: url(http://demo.mejorainfotech.com/dev/test/lorempixel.jpg) center no-repeat;
     background-size: cover;
     height: 350px;
     display: flex;

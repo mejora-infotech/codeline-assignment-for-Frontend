@@ -14,7 +14,17 @@ export class SearchComponent {
 
 	}
 
+	//key press handle in search input
+	private handleKeyDown($event) {
+		//handle "enter" key pressed
+		if ($event.keyCode == 13) {
+	       this.makeSearch($event.target.value);
+	    }
+		
+	}
+
 	private makeSearch(keyword) {
+		//if keyword not empty then navigate to search page
 		if(keyword.trim()!=='') {
 			this.router.navigate(['/search', keyword]);
 		}		

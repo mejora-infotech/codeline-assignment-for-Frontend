@@ -3,11 +3,13 @@
 <main>
 
 	<div class="container">
-		<div class="row justify-content-center">
+		<div *ngIf="result_found" class="row justify-content-center">
 
 			<weather *ngFor="let woeid of weather_ids" [woeid]="woeid"></weather>
-			
+
 		</div>
+
+		<h3 *ngIf="!result_found">No results were found. Try changing the  keyword!</h3>
 	</div>
 
 </main>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {ApiService} from './api.service';
-import {search}
+import {search_api} from './search_api';
 
 @Component({
   selector: 'search_result',
@@ -12,6 +12,8 @@ export class SearchResultComponent {
 	private weather_ids: Array<string> = [];
 
 	private keyword: string;
+
+	private result_found: boolean = true;
 
 	//observable that gets search parameter
 	private observ_param;
@@ -28,13 +30,20 @@ export class SearchResultComponent {
 	       this.keyword = params['keyword'];
 
 	       //get weather data from api
-	       this.observ_data=this.api_service.getSearchResult(this.keyword).subscribe((data)=>{
-	       		var weather_ids=[];
-	       		for(let i=0; i<data.length; i++) {
+	       this.observ_data=this.api_service.getSearchResult(this.keyword).subscribe((data: search_api[])=>{
 
+	       		this.weather_ids=[];
+
+	       		if(data.length==0) {
+	       			this.result_found=false;
 	       		}
-
-	       		this.weather_ids=data
+	       		else {
+	       			this.result_found=true;
+	       		}
+	       		
+	       		for(let i=0; i<data.length; i++) {
+	       			this.weather_ids.push(data[i].woeid);
+	       		}
 	       });
 	    });		
 	}
